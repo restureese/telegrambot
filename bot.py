@@ -42,16 +42,21 @@ def summarize(bot, update):
 
 
 #enable '/start' command
-start_handler = CommandHandler('start', start)
-start_handler = CommandHandler('restu', restu)
-start_handler = CommandHandler('posdim', posdim)
-
+start_handler = CommandHandler('start',start)
+#enable '/restu' command
+restu_handler = CommandHandler('restu', restu)
+#enable '/posdim' command
+posdim_handler = CommandHandler('posdim', posdim)
 
 #summarize messager || meringkas pesan jika berisi text
 summarize_handler = MessageHandler([Filters.text], summarize)
 
 #dispatcher.add_handler(start_handler)
 dispatcher.add_handler(start_handler)
+# dispatcher.add_handler(restu_handler)
+dispatcher.add_handler(restu_handler)
+# dispatcher.add_handler(posdim_handler)
+dispatcher.add_handler(posdim_handler)
 
 
 updater.start_polling()
